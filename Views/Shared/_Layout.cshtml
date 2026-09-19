@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pawan Mehendi Art Studio - Premium Bridal & Traditional Henna Designs. Expert mehendi artist with over 12 years of experience. Book your appointment today!" />
+    <meta name="keywords" content="mehendi, henna, bridal mehendi, arabic mehendi, Indian henna designs, henna artist" />
+    <meta name="theme-color" content="#6B1E3A" />
+    <title>@ViewData["Title"] - Pawan Mehendi Art Studio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-mandala" style="width:250px; height:80px; margin:0 auto; display:flex; justify-content:center; align-items:center;">
+                <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; overflow:visible;">
+                    <style>
+                        .draw-cone { animation: moveCone 2s ease-in-out infinite; }
+                        .draw-line { stroke-dasharray: 260; stroke-dashoffset: 260; animation: drawLine 2s ease-in-out infinite; }
+                        @@keyframes moveCone {
+                            0% { transform: translate(20px, 0px) rotate(-10deg); }
+                            100% { transform: translate(280px, 0px) rotate(5deg); }
+                        }
+                        @@keyframes drawLine {
+                            0% { stroke-dashoffset: 260; }
+                            100% { stroke-dashoffset: 0; }
+                        }
+                    </style>
+
+                    <!-- The line being drawn (like a loader bar) -->
+                    <path d="M 20 70 L 280 70" fill="none" stroke="var(--gold-light)" stroke-width="6" stroke-linecap="round" class="draw-line" />
+                          
+                    <!-- Elegant Mehendi Cone -->
+                    <g class="draw-cone">
+                        <!-- Tip is at (0, 70) so when translated by 20, it hits the line start -->
+                        <path d="M 0 70 L 30 10 L 55 18 Z" fill="#6B1E3A" stroke="var(--gold-light)" stroke-width="2" stroke-linejoin="round"/>
+                        <!-- Decorative gold lines on cone -->
+                        <line x1="25" y1="20" x2="46" y2="26" stroke="var(--gold-light)" stroke-width="2"/>
+                        <line x1="20" y1="35" x2="41" y2="41" stroke="var(--gold-light)" stroke-width="2"/>
+                        <line x1="15" y1="50" x2="36" y2="56" stroke="var(--gold-light)" stroke-width="2"/>
+                        <circle cx="2" cy="72" r="3" fill="var(--gold-light)" />
+                    </g>
+                </svg>
+            </div>
+            <div class="loader-brand-container mt-2">
+                <span class="loader-brand-text">Pawan</span>
+                <span class="loader-brand-text">Mehendi</span>
+                <span class="loader-brand-text">Art</span>
+            </div>
+            <div class="loader-subtitle">Bridal &amp; Traditional Henna</div>
+        </div>
+    </div>
+
+    <!-- Floating Petals -->
+    <div id="petalsContainer"></div>
+
+    <!-- Animated SVG Background Pattern -->
+    <svg class="mehendi-bg-pattern" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="mehendiPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <!-- Mandala-like circles -->
+                <circle cx="40" cy="40" r="2" fill="#6B1E3A" opacity="0.8"/>
+                <circle cx="40" cy="40" r="8" fill="none" stroke="#C9973B" stroke-width="0.5"/>
+                <circle cx="40" cy="40" r="15" fill="none" stroke="#6B1E3A" stroke-width="0.3"/>
+                <!-- Petals -->
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(0 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(45 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(90 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(135 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(180 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(225 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(270 40 40)"/>
+                <ellipse cx="40" cy="27" rx="3" ry="6" fill="#C9973B" opacity="0.6" transform="rotate(315 40 40)"/>
+                <!-- Dots -->
+                <circle cx="40" cy="20" r="1.5" fill="#6B1E3A" opacity="0.5"/>
+                <circle cx="60" cy="40" r="1.5" fill="#6B1E3A" opacity="0.5"/>
+                <circle cx="40" cy="60" r="1.5" fill="#6B1E3A" opacity="0.5"/>
+                <circle cx="20" cy="40" r="1.5" fill="#6B1E3A" opacity="0.5"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#mehendiPattern)"/>
+    </svg>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-mehendi" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand-mehendi" asp-area="" asp-controller="Home" asp-action="Index">
+                <span class="brand-icon">✿</span> Pawan Mehendi Art
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarContent" aria-controls="navbarContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list text-warning fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+                    <li class="nav-item">
+                        <a class="nav-link-mehendi @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" && ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")" 
+                           asp-controller="Home" asp-action="Index">
+                            <i class="bi bi-house-door me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mehendi @(ViewContext.RouteData.Values["controller"]?.ToString() == "Gallery" ? "active" : "")" 
+                           asp-controller="Gallery" asp-action="Index">
+                            <i class="bi bi-images me-1"></i>Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mehendi @(ViewContext.RouteData.Values["controller"]?.ToString() == "Services" ? "active" : "")" 
+                           asp-controller="Services" asp-action="Index">
+                            <i class="bi bi-stars me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-mehendi @(ViewContext.RouteData.Values["controller"]?.ToString() == "About" ? "active" : "")" 
+                           asp-controller="About" asp-action="Index">
+                            <i class="bi bi-person-heart me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link-mehendi nav-cta-btn" asp-controller="Contact" asp-action="Index">
+                            <i class="bi bi-calendar-heart me-1"></i>Book Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="footer-brand d-block mb-3" href="#">✿ Pawan Mehendi Art</a>
+                    <p style="color:rgba(245,226,181,0.7); font-size:0.92rem; line-height:1.8;">
+                        Bringing the ancient art of mehendi to life with passion, creativity, and unmatched artistry. Every design tells a story of love and tradition.
+                    </p>
+                    <div class="social-links-contact mt-3">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <p class="footer-heading">Quick Links</p>
+                    <a href="/" class="footer-link"><i class="bi bi-chevron-right me-1" style="font-size:0.75rem;"></i>Home</a>
+                    <a href="/Gallery" class="footer-link"><i class="bi bi-chevron-right me-1" style="font-size:0.75rem;"></i>Gallery</a>
+                    <a href="/Services" class="footer-link"><i class="bi bi-chevron-right me-1" style="font-size:0.75rem;"></i>Services</a>
+                    <a href="/About" class="footer-link"><i class="bi bi-chevron-right me-1" style="font-size:0.75rem;"></i>About Us</a>
+                    <a href="/Contact" class="footer-link"><i class="bi bi-chevron-right me-1" style="font-size:0.75rem;"></i>Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <p class="footer-heading">Our Services</p>
+                    <a href="/Services" class="footer-link"><i class="bi bi-gem me-1"></i>Bridal Mehendi</a>
+                    <a href="/Services" class="footer-link"><i class="bi bi-flower1 me-1"></i>Arabic Designs</a>
+                    <a href="/Services" class="footer-link"><i class="bi bi-circle-square me-1"></i>Mandala Art</a>
+                    <a href="/Services" class="footer-link"><i class="bi bi-palette me-1"></i>Indo-Western</a>
+                    <a href="/Services" class="footer-link"><i class="bi bi-people me-1"></i>Group Bookings</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <p class="footer-heading">Contact Info</p>
+                    <div class="footer-link"><i class="bi bi-geo-alt me-2" style="color:var(--gold-light);"></i>123 Henna Lane, Dehradun — 248001</div>
+                    <div class="footer-link"><i class="bi bi-telephone me-2" style="color:var(--gold-light);"></i>+91 98765 43210</div>
+                    <div class="footer-link"><i class="bi bi-envelope me-2" style="color:var(--gold-light);"></i>hello@mehendiart.com</div>
+                    <div class="footer-link"><i class="bi bi-clock me-2" style="color:var(--gold-light);"></i>Mon - Sun: 10am - 8pm</div>
+                </div>
+            </div>
+            <hr class="footer-divider" />
+            <div class="footer-bottom">
+                <p>&copy; @DateTime.Now.Year Pawan Mehendi Art Studio. All rights reserved.</p>
+                <p>Made with <span style="color:#C9973B;">♥</span> & Henna</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    // ===== PAGE LOADER =====
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.getElementById('pageLoader').classList.add('hidden');
+        }, 2500);
+    });
+
+    // ===== FLOATING PETALS =====
+    function createPetals() {
+        const petals = ['🌸', '🌺', '✿', '❀', '🌼'];
+        const container = document.getElementById('petalsContainer');
+        for (let i = 0; i < 8; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 8 + 6) + 's';
+            petal.style.animationDelay = (Math.random() * 8) + 's';
+            petal.style.fontSize = (Math.random() * 0.8 + 0.6) + 'rem';
+            container.appendChild(petal);
+        }
+    }
+    createPetals();
+
+    // ===== SCROLL ANIMATIONS =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, idx) => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay || 0);
+                setTimeout(() => {
+                    entry.target.classList.add('in-view');
+                    // Skill bars
+                    const bars = entry.target.querySelectorAll ? entry.target.querySelectorAll('.skill-bar-fill') : [];
+                    bars.forEach(bar => bar.classList.add('animated'));
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+
+    // Skill bars from parent
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                    bar.classList.add('animated');
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.skill-bar').forEach(el => skillObserver.observe(el));
+
+    // ===== BACK TO TOP =====
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+        // Navbar shrink
+        document.getElementById('mainNav').style.padding = window.scrollY > 50 ? '0.4rem 2rem' : '0.8rem 2rem';
+    });
+
+    // ===== LIGHTBOX =====
+    function openLightbox(src, alt) {
+        const overlay = document.getElementById('lightboxOverlay');
+        const img = document.getElementById('lightboxImg');
+        img.src = src;
+        img.alt = alt || '';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+        if (!event || event.target !== document.getElementById('lightboxImg')) {
+            document.getElementById('lightboxOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ===== COUNTER ANIMATION =====
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.count);
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current) + (el.dataset.suffix || '');
+        }, 16);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+    </script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

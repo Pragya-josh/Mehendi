@@ -1,0 +1,335 @@
+@{
+    ViewData["Title"] = "Services";
+}
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <div class="container text-center position-relative">
+        <span class="section-badge" style="background:rgba(201,151,59,0.2); border-color:rgba(201,151,59,0.4); color:var(--gold-light);">✦ What We Offer ✦</span>
+        <h1 class="page-banner-title mt-3">Our Services</h1>
+        <p style="color:rgba(245,226,181,0.75); font-size:1rem; margin-bottom:1.5rem;">Tailored mehendi experiences for every occasion and budget</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-mehendi justify-content-center">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Services</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Services Cards -->
+<section class="services-section" style="padding: 6rem 0;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge" style="background:rgba(201,151,59,0.15); border-color:rgba(201,151,59,0.3); color:var(--gold-light);" data-anim="fade">✦ Packages ✦</span>
+            <h2 class="section-title" style="color:white;" data-anim>Choose Your Package</h2>
+            <p class="section-subtitle" style="color:rgba(245,226,181,0.7);" data-anim data-delay="100">Every package crafted with love and expertise</p>
+        </div>
+        <div class="row g-4">
+            <!-- Bridal Package -->
+            <div class="col-lg-4 col-md-6" data-anim data-delay="0">
+                <div class="service-card position-relative">
+                    <div style="position:absolute; top:-1px; left:50%; transform:translateX(-50%);">
+                        <span style="background:var(--burgundy); color:var(--gold-light); font-size:0.72rem; font-weight:700; padding:4px 18px; border-radius:0 0 10px 10px; letter-spacing:1px; text-transform:uppercase;">MOST POPULAR</span>
+                    </div>
+                    <div class="text-center mb-3 mt-3">
+                        <div style="width:70px; height:70px; background:rgba(201,151,59,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem;">💍</div>
+                        <h3 style="color:var(--burgundy-dark); font-size:1.5rem; margin-bottom:0.3rem;">Bridal Bliss</h3>
+                        <p style="color:var(--burgundy); font-size:0.85rem; margin-bottom:1rem;">For the most important day of your life</p>
+                        <div class="service-price">₹8,999 <span>/ package</span></div>
+                    </div>
+                    <hr style="border-color:rgba(107,30,58,0.2); margin:1.5rem 0;"/>
+                    <ul style="list-style:none; padding:0; margin:0 0 2rem;">
+                        @foreach (var feature in new[] {
+                            "Both hands full coverage (finger to elbow)",
+                            "Both feet & ankles",
+                            "Personalized design consultation",
+                            "Peacock, lotus & paisley motifs",
+                            "Premium organic henna used",
+                            "Home service available",
+                            "3–4 hours session",
+                            "Free touch-ups on wedding day"
+                        })
+                        {
+                            <li style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; color:var(--burgundy); font-weight:500; font-size:0.88rem;">
+                                <i class="bi bi-check-circle-fill" style="color:var(--burgundy); margin-top:2px; flex-shrink:0;"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+                    <a href="/Contact" class="btn-gold w-100 justify-content-center" style="text-align:center;">
+                        <i class="bi bi-calendar-heart"></i> Book This Package
+                    </a>
+                </div>
+            </div>
+
+            <!-- Arabic Style Package -->
+            <div class="col-lg-4 col-md-6" data-anim data-delay="100">
+                <div class="service-card">
+                    <div class="text-center mb-3">
+                        <div style="width:70px; height:70px; background:rgba(201,151,59,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem;">🌺</div>
+                        <h3 style="color:var(--burgundy-dark); font-size:1.5rem; margin-bottom:0.3rem;">Arabic Elegance</h3>
+                        <p style="color:var(--burgundy); font-size:0.85rem; margin-bottom:1rem;">Modern & timeless Arabic art</p>
+                        <div class="service-price">₹3,499 <span>/ session</span></div>
+                    </div>
+                    <hr style="border-color:rgba(107,30,58,0.2); margin:1.5rem 0;"/>
+                    <ul style="list-style:none; padding:0; margin:0 0 2rem;">
+                        @foreach (var feature in new[] {
+                            "One or both hands",
+                            "Flowing floral & vine patterns",
+                            "Finger detailing included",
+                            "Bold & modern Arabic style",
+                            "Perfect for festivals & parties",
+                            "1.5–2 hours session",
+                            "Premium henna cone used"
+                        })
+                        {
+                            <li style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; color:var(--burgundy); font-weight:500; font-size:0.88rem;">
+                                <i class="bi bi-check-circle-fill" style="color:var(--burgundy); margin-top:2px; flex-shrink:0;"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+                    <a href="/Contact" class="btn-gold w-100 justify-content-center" style="text-align:center; background:var(--burgundy-dark); color:white; border:none;">
+                        <i class="bi bi-calendar-heart"></i> Book This Package
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mandala Package -->
+            <div class="col-lg-4 col-md-6" data-anim data-delay="200">
+                <div class="service-card">
+                    <div class="text-center mb-3">
+                        <div style="width:70px; height:70px; background:rgba(201,151,59,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem;">⭕</div>
+                        <h3 style="color:var(--burgundy-dark); font-size:1.5rem; margin-bottom:0.3rem;">Mandala Magic</h3>
+                        <p style="color:var(--burgundy); font-size:0.85rem; margin-bottom:1rem;">Geometric precision & beauty</p>
+                        <div class="service-price">₹2,499 <span>/ session</span></div>
+                    </div>
+                    <hr style="border-color:rgba(107,30,58,0.2); margin:1.5rem 0;"/>
+                    <ul style="list-style:none; padding:0; margin:0 0 2rem;">
+                        @foreach (var feature in new[] {
+                            "Palm or back of hand design",
+                            "Intricate geometric mandala",
+                            "Fine dotwork detailing",
+                            "Customizable size & complexity",
+                            "Great for photoshoots",
+                            "1–1.5 hours session",
+                            "Suitable for all ages"
+                        })
+                        {
+                            <li style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; color:var(--burgundy); font-weight:500; font-size:0.88rem;">
+                                <i class="bi bi-check-circle-fill" style="color:var(--burgundy); margin-top:2px; flex-shrink:0;"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+                    <a href="/Contact" class="btn-gold w-100 justify-content-center" style="text-align:center; background:var(--burgundy-dark); color:white; border:none;">
+                        <i class="bi bi-calendar-heart"></i> Book This Package
+                    </a>
+                </div>
+            </div>
+
+            <!-- Simple Package -->
+            <div class="col-lg-4 col-md-6" data-anim data-delay="0">
+                <div class="service-card">
+                    <div class="text-center mb-3">
+                        <div style="width:70px; height:70px; background:rgba(201,151,59,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem;">✿</div>
+                        <h3 style="color:var(--burgundy-dark); font-size:1.5rem; margin-bottom:0.3rem;">Simple & Sweet</h3>
+                        <p style="color:var(--burgundy); font-size:0.85rem; margin-bottom:1rem;">Light & delicate minimalist designs</p>
+                        <div class="service-price">₹999 <span>/ session</span></div>
+                    </div>
+                    <hr style="border-color:rgba(107,30,58,0.2); margin:1.5rem 0;"/>
+                    <ul style="list-style:none; padding:0; margin:0 0 2rem;">
+                        @foreach (var feature in new[] {
+                            "Light pattern for one hand",
+                            "Minimalist floral or boho style",
+                            "Great for casual events",
+                            "Kids-friendly option available",
+                            "30–60 mins session",
+                            "Quick dry formula"
+                        })
+                        {
+                            <li style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; color:var(--burgundy); font-weight:500; font-size:0.88rem;">
+                                <i class="bi bi-check-circle-fill" style="color:var(--burgundy); margin-top:2px; flex-shrink:0;"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+                    <a href="/Contact" class="btn-gold w-100 justify-content-center" style="text-align:center; background:var(--burgundy-dark); color:white; border:none;">
+                        <i class="bi bi-calendar-heart"></i> Book This Package
+                    </a>
+                </div>
+            </div>
+
+            <!-- Feet Package -->
+            <div class="col-lg-4 col-md-6" data-anim data-delay="100">
+                <div class="service-card">
+                    <div class="text-center mb-3">
+                        <div style="width:70px; height:70px; background:rgba(201,151,59,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem;">🦶</div>
+                        <h3 style="color:var(--burgundy-dark); font-size:1.5rem; margin-bottom:0.3rem;">Feet & Anklets</h3>
+                        <p style="color:var(--burgundy); font-size:0.85rem; margin-bottom:1rem;">Beautiful designs for the feet</p>
+                        <div class="service-price">₹2,999 <span>/ session</span></div>
+                    </div>
+                    <hr style="border-color:rgba(107,30,58,0.2); margin:1.5rem 0;"/>
+                    <ul style="list-style:none; padding:0; margin:0 0 2rem;">
+                        @foreach (var feature in new[] {
+                            "Both feet top & sole design",
+                            "Ankle bracelet patterns",
+                            "Toe detailing included",
+                            "Intricate mandala on sole",
+                            "Perfect for bridal feet",
+                            "1.5–2 hours session"
+                        })
+                        {
+                            <li style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; color:var(--burgundy); font-weight:500; font-size:0.88rem;">
+                                <i class="bi bi-check-circle-fill" style="color:var(--burgundy); margin-top:2px; flex-shrink:0;"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+                    <a href="/Contact" class="btn-gold w-100 justify-content-center" style="text-align:center; background:var(--burgundy-dark); color:white; border:none;">
+                        <i class="bi bi-calendar-heart"></i> Book This Package
+                    </a>
+                </div>
+            </div>
+
+            <!-- Group Package -->
+            <div class="col-lg-4 col-md-6" data-anim data-delay="200">
+                <div class="service-card">
+                    <div class="text-center mb-3">
+                        <div style="width:70px; height:70px; background:rgba(201,151,59,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem;">👥</div>
+                        <h3 style="color:var(--burgundy-dark); font-size:1.5rem; margin-bottom:0.3rem;">Group & Events</h3>
+                        <p style="color:var(--burgundy); font-size:0.85rem; margin-bottom:1rem;">For parties, events & corporate</p>
+                        <div class="service-price">₹799 <span>/ person</span></div>
+                    </div>
+                    <hr style="border-color:rgba(107,30,58,0.2); margin:1.5rem 0;"/>
+                    <ul style="list-style:none; padding:0; margin:0 0 2rem;">
+                        @foreach (var feature in new[] {
+                            "Minimum 10 persons",
+                            "Light Arabic or simple designs",
+                            "Multiple artists available",
+                            "Corporate & festive events",
+                            "Mehendi stall setup option",
+                            "Custom pricing for 50+ guests"
+                        })
+                        {
+                            <li style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; color:var(--burgundy); font-weight:500; font-size:0.88rem;">
+                                <i class="bi bi-check-circle-fill" style="color:var(--burgundy); margin-top:2px; flex-shrink:0;"></i>
+                                @feature
+                            </li>
+                        }
+                    </ul>
+                    <a href="/Contact" class="btn-gold w-100 justify-content-center" style="text-align:center; background:var(--burgundy-dark); color:white; border:none;">
+                        <i class="bi bi-calendar-heart"></i> Book This Package
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Process -->
+<section style="padding: 6rem 0; background: var(--cream);">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-anim="left">
+                <span class="section-badge">✦ How It Works ✦</span>
+                <h2 class="section-title">Our Simple Process</h2>
+                <p class="section-subtitle">From booking to beautiful — here's how we make it happen</p>
+                <div style="width:60px; height:3px; background:linear-gradient(to right, var(--gold), var(--gold-light)); border-radius:2px; margin-bottom:2rem;"></div>
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <div class="process-step-content">
+                            <h5 style="color:var(--burgundy-dark); margin-bottom:0.4rem; font-size:1rem;"><i class="bi bi-telephone-inbound me-2" style="color:var(--gold);"></i>Consultation & Booking</h5>
+                            <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">Call or book online. We discuss your design preferences, occasion, and schedule your session.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <div class="process-step-content">
+                            <h5 style="color:var(--burgundy-dark); margin-bottom:0.4rem; font-size:1rem;"><i class="bi bi-palette2 me-2" style="color:var(--gold);"></i>Design Planning</h5>
+                            <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">We share design inspirations, finalize the pattern, and prepare premium organic henna.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <div class="process-step-content">
+                            <h5 style="color:var(--burgundy-dark); margin-bottom:0.4rem; font-size:1rem;"><i class="bi bi-brush me-2" style="color:var(--gold);"></i>The Magic Session</h5>
+                            <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">Our artist carefully applies the design with precision and artistry. Relax and enjoy!</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">4</div>
+                        <div class="process-step-content">
+                            <h5 style="color:var(--burgundy-dark); margin-bottom:0.4rem; font-size:1rem;"><i class="bi bi-stars me-2" style="color:var(--gold);"></i>Aftercare & Reveal</h5>
+                            <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">We provide aftercare instructions. After 8–12 hours, reveal your stunning dark stain!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7" data-anim="right">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <img src="/images/hero.jpg" alt="Bridal Mehendi" class="img-fluid" style="border-radius:20px; box-shadow:var(--shadow);"/>
+                    </div>
+                    <div class="col-6 mt-4">
+                        <img src="/images/arabic.jpg" alt="Arabic Mehendi" class="img-fluid" style="border-radius:20px; box-shadow:var(--shadow);"/>
+                    </div>
+                    <div class="col-6">
+                        <img src="/images/feet.jpg" alt="Feet Mehendi" class="img-fluid" style="border-radius:20px; box-shadow:var(--shadow);"/>
+                    </div>
+                    <div class="col-6 mt-n4">
+                        <img src="/images/mandala.jpg" alt="Mandala Mehendi" class="img-fluid" style="border-radius:20px; box-shadow:var(--shadow);"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section style="padding: 5rem 0; background:#F9F1E8;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge" data-anim="fade">✦ FAQs ✦</span>
+            <h2 class="section-title" data-anim>Frequently Asked Questions</h2>
+            <div class="ornament-divider" data-anim data-delay="100"><span>✿</span></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-anim>
+                <div class="accordion" id="faqAccordion">
+                    @{
+                        var faqs = new[] {
+                            ("How long does henna last?", "Henna typically lasts 1–3 weeks depending on where it's applied. Hands tend to have the darkest and longest-lasting stain. Proper aftercare significantly extends the color."),
+                            ("Is henna safe for everyone?", "Our organic henna is 100% natural and free from chemicals. It's safe for most skin types, including sensitive skin. We never use black henna or chemical additives."),
+                            ("How far in advance should I book for a wedding?", "We recommend booking 2–3 months in advance for weddings, especially during peak season (Oct–Feb). Popular dates fill up quickly!"),
+                            ("Do you offer home service?", "Yes! We offer home service for bridal and group bookings within dehradun city limits. A small travel charge may apply based on distance."),
+                            ("How long should I keep henna on?", "For the darkest stain, keep the henna paste on for at least 8–12 hours (overnight is ideal). Don't wash with soap — just scrape off the dried paste."),
+                            ("What should I do before my mehendi session?", "Wash your hands and feet thoroughly beforehand. Avoid applying any moisturizer or oil. Wear comfortable, loose clothing that allows easy access to the design area.")
+                        };
+                        int i = 0;
+                        foreach (var (q, a) in faqs)
+                        {
+                            <div class="accordion-item mb-3" style="border:1px solid rgba(201,151,59,0.2); border-radius:12px; overflow:hidden; background:white;">
+                                <h3 class="accordion-header" id="faqHead@(i)">
+                                    <button class="accordion-button @(i > 0 ? "collapsed" : "")" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faqCollapse@(i)"
+                                            style="font-weight:600; color:var(--burgundy-dark); background:white; box-shadow:none; font-family:'Poppins',sans-serif; font-size:0.95rem;">
+                                        <i class="bi bi-question-circle me-2" style="color:var(--gold);"></i>@q
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse@(i)" class="accordion-collapse collapse @(i == 0 ? "show" : "")" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body" style="color:var(--text-muted); font-size:0.92rem; line-height:1.8; border-top:1px solid rgba(201,151,59,0.15);">
+                                        @a
+                                    </div>
+                                </div>
+                            </div>
+                            i++;
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

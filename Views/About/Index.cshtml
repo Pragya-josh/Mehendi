@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <div class="container text-center position-relative">
+        <span class="section-badge" style="background:rgba(201,151,59,0.2); border-color:rgba(201,151,59,0.4); color:var(--gold-light);">✦ Our Story ✦</span>
+        <h1 class="page-banner-title mt-3">About Pawan Mehendi Art</h1>
+        <p style="color:rgba(245,226,181,0.75); font-size:1rem; margin-bottom:1.5rem;">Passionate artists, timeless traditions, unforgettable memories</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-mehendi justify-content-center">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">About Us</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- About Story -->
+<section style="padding: 6rem 0; background: var(--cream);">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-anim="left">
+                <div class="about-image-wrap">
+                    <img src="/images/artist.png" alt="Pawan - Mehendi Artist" class="img-fluid" style="border-radius:30px; box-shadow: 0 30px 70px rgba(107,30,58,0.2);"/>
+                    <div class="about-badge-card">
+                        <span class="number" data-count="12" data-suffix="+">12+</span>
+                        <div class="label">Years Mastery</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-anim="right">
+                <span class="section-badge">✦ The Artist ✦</span>
+                <h2 class="section-title">Meet Pawan</h2>
+                <p style="font-family:'Dancing Script',cursive; font-size:1.3rem; color:var(--gold); margin-bottom:1rem;">Master Mehendi Artist & Creative Director</p>
+                <div style="width:60px; height:3px; background:linear-gradient(to right, var(--gold), var(--gold-light)); border-radius:2px; margin-bottom:1.5rem;"></div>
+                <p style="color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem;">
+                    Born into a family of traditional artists in Rajasthan, Pawan discovered her passion for mehendi at the age of 8, watching her grandmother adorning brides with exquisite designs. What began as childhood curiosity blossomed into a lifelong dedication to the art form.
+                </p>
+                <p style="color:var(--text-muted); line-height:1.9; margin-bottom:1.2rem;">
+                    After training under renowned mehendi masters in Jaipur and completing advanced courses in Arabic and Indo-Persian styles in Dubai, Pawan returned to India to establish <strong>Pawan Mehendi Art Studio</strong> — a space where ancient tradition meets contemporary artistry.
+                </p>
+                <p style="color:var(--text-muted); line-height:1.9; margin-bottom:2rem;">
+                    Today, with over 12 years of professional experience and more than 1,200 bridal designs to her credit, Pawan's work has been featured in leading bridal magazines and earned recognition at multiple national mehendi competitions.
+                </p>
+                <!-- Expertise badges -->
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach (var badge in new[] { "Bridal Specialist", "Arabic Fusion", "Mandala Art", "Indo-Persian", "Minimal Boho", "Event Planning" })
+                    {
+                        <span style="background:var(--gold-pale); color:var(--burgundy); padding:6px 14px; border-radius:20px; font-size:0.82rem; font-weight:600; border:1px solid rgba(201,151,59,0.3);">@badge</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section style="padding: 5rem 0; background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));">
+    <div class="container">
+        <div class="row g-4 text-center">
+            @{
+                var stats = new[] {
+                    ("bi-people-fill", "1200+", "Brides Adorned", "1200", "+"),
+                    ("bi-award-fill", "25+", "Awards Won", "25", "+"),
+                    ("bi-calendar-check-fill", "12+", "Years Experience", "12", "+"),
+                    ("bi-star-fill", "4.9", "Average Rating", "49", "/5")
+                };
+                int si = 0;
+                foreach (var (icon, num, label, count, suf) in stats)
+                {
+                    <div class="col-lg-3 col-md-6" data-anim data-delay="@(si * 100)">
+                        <div style="padding:2rem;">
+                            <i class="bi @icon" style="font-size:2.5rem; color:var(--gold-light); display:block; margin-bottom:1rem;"></i>
+                            <div style="font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:white; line-height:1;" data-count="@count" data-suffix="@suf">@num</div>
+                            <div style="color:rgba(245,226,181,0.7); font-size:0.9rem; margin-top:8px; text-transform:uppercase; letter-spacing:1px;">@label</div>
+                        </div>
+                    </div>
+                    si++;
+                }
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section style="padding: 6rem 0; background: #F9F1E8;">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6" data-anim="left">
+                <span class="section-badge">✦ Expertise ✦</span>
+                <h2 class="section-title">Skills & Specializations</h2>
+                <p class="section-subtitle">Mastered through years of dedication and artistic pursuit</p>
+                <div style="width:60px; height:3px; background:linear-gradient(to right, var(--gold), var(--gold-light)); border-radius:2px; margin-bottom:2.5rem;"></div>
+                
+                @{
+                    var skills = new[] {
+                        ("Bridal Mehendi", "97"),
+                        ("Arabic Designs", "95"),
+                        ("Mandala Art", "90"),
+                        ("Indo-Western Fusion", "88"),
+                        ("Minimal & Boho Styles", "85"),
+                        ("Kids & Simple Designs", "98")
+                    };
+                    foreach (var (name, pct) in skills)
+                    {
+                        <div class="skill-bar">
+                            <div class="skill-bar-label">
+                                <span>@name</span>
+                                <span style="color:var(--gold);">@pct%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" style="--target-width:@(pct)%;"></div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="col-lg-6" data-anim="right">
+                <span class="section-badge">✦ Our Journey ✦</span>
+                <h2 class="section-title">Milestones & Achievements</h2>
+                <p class="section-subtitle">A journey woven with passion, art, and dedication</p>
+                <div style="width:60px; height:3px; background:linear-gradient(to right, var(--gold), var(--gold-light)); border-radius:2px; margin-bottom:2.5rem;"></div>
+                
+                @{
+                    var timeline = new[] {
+                        ("2012", "bi-mortarboard", "Training in Rajasthan", "Apprenticed under Guru Padma Devi, learning traditional Rajasthani mehendi styles."),
+                        ("2015", "bi-airplane", "International Training", "Advanced Arabic & Indo-Persian training in Dubai with master artists."),
+                        ("2016", "bi-shop", "Studio Founded", "Established Pawan Mehendi Art Studio in Mumbai, beginning the professional journey."),
+                        ("2019", "bi-trophy", "National Recognition", "Won Gold at National Mehendi Championship, Jaipur. Featured in Bridal Asia magazine."),
+                        ("2022", "bi-camera-video", "Digital Expansion", "Launched online masterclasses reaching 50,000+ students across India."),
+                        ("2024", "bi-stars", "1000+ Brides Milestone", "Celebrated adorning the 1000th bride — a landmark achievement!")
+                    };
+                    foreach (var (year, icon, title, desc) in timeline)
+                    {
+                        <div style="display:flex; gap:1.2rem; margin-bottom:1.5rem; align-items:flex-start;">
+                            <div style="min-width:50px; text-align:center;">
+                                <div style="background:linear-gradient(135deg,var(--burgundy),var(--gold)); color:white; border-radius:50%; width:46px; height:46px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 4px 15px rgba(107,30,58,0.3);">
+                                    <i class="bi @icon"></i>
+                                </div>
+                                <div style="font-weight:700; font-size:0.78rem; color:var(--gold); margin-top:4px;">@year</div>
+                            </div>
+                            <div style="background:white; border-radius:14px; padding:1rem 1.2rem; border-left:3px solid var(--gold); box-shadow:0 4px 15px rgba(0,0,0,0.06); flex:1;">
+                                <h6 style="font-weight:700; color:var(--burgundy-dark); margin-bottom:0.3rem; font-size:0.95rem;">@title</h6>
+                                <p style="color:var(--text-muted); font-size:0.83rem; margin:0; line-height:1.6;">@desc</p>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section style="padding: 5rem 0; background: var(--cream);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge" data-anim="fade">✦ Our Values ✦</span>
+            <h2 class="section-title" data-anim>What We Stand For</h2>
+            <div class="ornament-divider" data-anim data-delay="100"><span>✿</span></div>
+        </div>
+        <div class="row g-4">
+            @{
+                var values = new[] {
+                    ("bi-heart-fill", "#C9973B", "Passion First", "Every stroke is applied with genuine love and dedication. We don't just apply henna — we create art that carries emotion."),
+                    ("bi-leaf-fill", "#5a8a5a", "100% Natural", "We are committed to using only the finest, chemical-free organic henna. Your safety and health come before everything."),
+                    ("bi-lightbulb-fill", "#C2623F", "Creative Excellence", "We constantly evolve, learning new techniques and styles to offer designs that are fresh, unique, and extraordinary."),
+                    ("bi-handshake-fill", "#6B1E3A", "Client Delight", "Your happiness is our highest reward. We go beyond expectations to ensure every client leaves with a smile and a story to tell.")
+                };
+                int vi = 0;
+                foreach (var (icon, color, title, desc) in values)
+                {
+                    <div class="col-lg-3 col-md-6" data-anim data-delay="@(vi * 100)">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon-wrap" style="background:@(color)22; color:@color; box-shadow:none; border:2px solid @(color)33;">
+                                <i class="bi @icon"></i>
+                            </div>
+                            <h4>@title</h4>
+                            <p>@desc</p>
+                        </div>
+                    </div>
+                    vi++;
+                }
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Team -->
+<section style="padding: 5rem 0; background:#F9F1E8;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge" data-anim="fade">✦ The Team ✦</span>
+            <h2 class="section-title" data-anim>Our Talented Artists</h2>
+            <p class="section-subtitle" data-anim data-delay="100">A collective of passionate and skilled henna artisans</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            @{
+                var team = new[] {
+                    ("P", "Pawan", "Founder & Lead Artist", "12 yrs exp.", "#C9973B"),
+                    ("A", "Ananya Joshi", "Bridal Specialist", "8 yrs exp.", "#6B1E3A"),
+                    ("S", "Sara Khan", "Arabic Design Expert", "6 yrs exp.", "#C2623F"),
+                    ("N", "Neha Patel", "Mandala & Geometric Art", "5 yrs exp.", "#8B2D52")
+                };
+                foreach (var (initial, name, role, exp, clr) in team)
+                {
+                    <div class="col-lg-3 col-md-6 col-6" data-anim>
+                        <div style="text-align:center;">
+                            <div style="width:100px; height:100px; border-radius:50%; background:linear-gradient(135deg,@clr,var(--gold)); display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; font-size:2.5rem; font-weight:700; font-family:'Playfair Display',serif; color:white; box-shadow:0 10px 30px rgba(107,30,58,0.25); border:4px solid var(--gold-pale);">@initial</div>
+                            <h5 style="font-size:1.05rem; color:var(--burgundy-dark); margin-bottom:0.2rem;">@name</h5>
+                            <p style="color:var(--gold); font-size:0.85rem; font-weight:600; margin-bottom:0.2rem;">@role</p>
+                            <p style="color:var(--text-muted); font-size:0.8rem;"><i class="bi bi-clock me-1"></i>@exp</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

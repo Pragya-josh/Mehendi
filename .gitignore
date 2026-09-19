@@ -1,0 +1,115 @@
+# =========================
+# Build Results
+# =========================
+bin/
+obj/
+out/
+artifacts/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# =========================
+# Rider / ReSharper
+# =========================
+.idea/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+*.nuget.props
+*.nuget.targets
+
+# =========================
+# .NET Core / ASP.NET
+# =========================
+project.lock.json
+project.fragment.lock.json
+ScaffoldingReadMe.txt
+
+# =========================
+# Publish Output
+# =========================
+publish/
+**/wwwroot/dist/
+**/wwwroot/lib/
+**/wwwroot/node_modules/
+
+
+# =========================
+# Node (if used)
+# =========================
+node_modules/
+
+# =========================
+# Environment Files
+# =========================
+*.env
+appsettings.Development.json
+appsettings.Local.json
+
+# =========================
+# Azure / Local Settings
+# =========================
+local.settings.json
+
+# =========================
+# Coverage / Testing
+# =========================
+coverage/
+*.coverage
+*.coveragexml
+TestResults/
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+temp/
+tmp/
+
+# =========================
+# Backup Files
+# =========================
+*.bak
+*.old
+*.bin
+
+# =========================
+# EF Core (Optional)
+# =========================
+# Uncomment if you don’t want migration snapshots
+# Migrations/*Snapshot.cs

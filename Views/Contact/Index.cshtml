@@ -1,0 +1,226 @@
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <div class="container text-center position-relative">
+        <span class="section-badge" style="background:rgba(201,151,59,0.2); border-color:rgba(201,151,59,0.4); color:var(--gold-light);">✦ Let's Connect ✦</span>
+        <h1 class="page-banner-title mt-3">Book Your Appointment</h1>
+        <p style="color:rgba(245,226,181,0.75); font-size:1rem; margin-bottom:1.5rem;">Your beautiful mehendi journey begins with a single step</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-mehendi justify-content-center">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Contact</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" style="padding: 6rem 0;">
+    <div class="container">
+        <!-- Success Message -->
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert d-flex align-items-center gap-3 mb-4" style="background:linear-gradient(135deg,#d4edda,#c3e6cb); border:1px solid #b8dcc0; border-radius:16px; padding:1.2rem 1.5rem; color:#1a5c2e;">
+                <i class="bi bi-check-circle-fill" style="font-size:1.5rem; flex-shrink:0;"></i>
+                <span>@TempData["Success"]</span>
+            </div>
+        }
+
+        <div class="row g-4">
+            <!-- Contact Form -->
+            <div class="col-lg-7" data-anim="left">
+                <div class="contact-card">
+                    <h3 style="font-size:1.8rem; color:var(--burgundy-dark); margin-bottom:0.5rem;">
+                        <i class="bi bi-calendar-heart me-2" style="color:var(--gold);"></i>Request Your Appointment
+                    </h3>
+                    <p style="color:var(--text-muted); margin-bottom:2rem; font-size:0.92rem;">Fill in the details below and we'll get back to you within 24 hours to confirm.</p>
+                    
+                    <form method="post" asp-controller="Contact" asp-action="Index" id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label-mehendi" for="name"><i class="bi bi-person me-1"></i>Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-control-mehendi" placeholder="Your full name" required minlength="2"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-mehendi" for="email"><i class="bi bi-envelope me-1"></i>Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control-mehendi" placeholder="your@email.com" required/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-mehendi" for="phone"><i class="bi bi-telephone me-1"></i>Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control-mehendi" placeholder="+91 98765 43210" required/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-mehendi" for="service"><i class="bi bi-stars me-1"></i>Service Required *</label>
+                                <select id="service" name="service" class="form-control-mehendi" required>
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="bridal">💍 Bridal Bliss Package (₹8,999)</option>
+                                    <option value="arabic">🌺 Arabic Elegance (₹3,499)</option>
+                                    <option value="mandala">⭕ Mandala Magic (₹2,499)</option>
+                                    <option value="simple">✿ Simple & Sweet (₹999)</option>
+                                    <option value="feet">🦶 Feet & Anklets (₹2,999)</option>
+                                    <option value="group">👥 Group & Events (₹799/person)</option>
+                                    <option value="custom">🎨 Custom Design (Price on Request)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-mehendi" for="date"><i class="bi bi-calendar3 me-1"></i>Preferred Date *</label>
+                                <input type="date" id="date" name="date" class="form-control-mehendi" required/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-mehendi" for="time"><i class="bi bi-clock me-1"></i>Preferred Time</label>
+                                <select id="time" name="time" class="form-control-mehendi">
+                                    <option value="">Select time slot...</option>
+                                    <option value="10:00">10:00 AM - 12:00 PM</option>
+                                    <option value="12:00">12:00 PM - 2:00 PM</option>
+                                    <option value="14:00">2:00 PM - 4:00 PM</option>
+                                    <option value="16:00">4:00 PM - 6:00 PM</option>
+                                    <option value="18:00">6:00 PM - 8:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-mehendi" for="occasion"><i class="bi bi-gift me-1"></i>Occasion</label>
+                                <div class="d-flex flex-wrap gap-2 mt-1" id="occasionBtns">
+                                    @foreach (var occ in new[] { "Wedding", "Engagement", "Diwali", "Eid", "Birthday", "Festival", "Photoshoot", "Other" })
+                                    {
+                                        <button type="button" class="gallery-filter-btn" onclick="selectOccasion(this,'@occ')">@occ</button>
+                                    }
+                                </div>
+                                <input type="hidden" id="occasion" name="occasion" value=""/>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-mehendi" for="message"><i class="bi bi-chat-dots me-1"></i>Special Requests / Design Ideas</label>
+                                <textarea id="message" name="message" class="form-control-mehendi" rows="4" placeholder="Tell us about your design preferences, inspiration images, venue details, or any special requests..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:1.5rem;">
+                                    <input type="checkbox" id="homeService" name="homeService" style="margin-top:3px; accent-color:var(--burgundy); width:16px; height:16px;"/>
+                                    <label for="homeService" style="font-size:0.88rem; color:var(--text-muted); cursor:pointer;">
+                                        <strong style="color:var(--burgundy-dark);">I'd like home service</strong> — artist comes to my location (additional travel charges may apply)
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn-gold w-100 justify-content-center" style="text-align:center; font-size:1.05rem; padding:16px;">
+                                    <i class="bi bi-send-check"></i> Send Appointment Request
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-5" data-anim="right">
+                <div class="contact-info-card">
+                    <h4 style="color:var(--gold-light); font-size:1.4rem; margin-bottom:0.5rem;">
+                        <i class="bi bi-info-circle me-2"></i>Get In Touch
+                    </h4>
+                    <p style="color:rgba(245,226,181,0.7); font-size:0.88rem; margin-bottom:2rem;">We'd love to hear from you. Reach out through any of these channels.</p>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div>
+                            <p style="color:var(--gold-light); font-weight:600; margin:0 0 4px; font-size:0.9rem;">Studio Address</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem; line-height:1.6;">123, Henna Mehendi<br/>Dehradun</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div>
+                            <p style="color:var(--gold-light); font-weight:600; margin:0 0 4px; font-size:0.9rem;">Phone & WhatsApp</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem;">+91 98765 43210</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem;">+91 87654 32109</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div>
+                            <p style="color:var(--gold-light); font-weight:600; margin:0 0 4px; font-size:0.9rem;">Email</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem;">hello@mehendiart.com</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem;">bookings@mehendiart.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+                        <div>
+                            <p style="color:var(--gold-light); font-weight:600; margin:0 0 4px; font-size:0.9rem;">Business Hours</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem;">Monday – Saturday: 10 AM – 8 PM</p>
+                            <p style="color:rgba(245,226,181,0.8); margin:0; font-size:0.88rem;">Sunday: 11 AM – 6 PM</p>
+                        </div>
+                    </div>
+
+                    <hr style="border-color:rgba(201,151,59,0.2); margin:1.5rem 0;"/>
+
+                    <p style="color:var(--gold-light); font-weight:600; font-size:0.9rem; margin-bottom:0.8rem;">Follow Our Work</p>
+                    <div class="social-links-contact">
+                        <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="Pinterest" title="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="YouTube" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="WhatsApp" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Tip Card -->
+                <div style="background:var(--gold-pale); border-radius:16px; padding:1.5rem; margin-top:1.5rem; border:1px solid rgba(201,151,59,0.25);">
+                    <p style="color:var(--burgundy-dark); font-weight:700; margin-bottom:0.5rem; font-size:0.9rem;">
+                        <i class="bi bi-lightbulb-fill me-2" style="color:var(--gold);"></i>Booking Tips
+                    </p>
+                    <ul style="color:var(--text-muted); font-size:0.85rem; line-height:1.9; margin:0; padding-left:1rem;">
+                        <li>Book at least <strong>2–4 weeks</strong> in advance for weddings</li>
+                        <li>Share reference images for custom designs</li>
+                        <li>Session duration: 1–4 hours based on package</li>
+                        <li>We confirm bookings within <strong>24 hours</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section style="height:300px; background:#eee; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:linear-gradient(135deg,var(--gold-pale),#f0d8b0); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem;">
+        <div style="font-size:4rem;">📍</div>
+        <h4 style="color:var(--burgundy-dark);">Mehendi Art Studio</h4>
+        <p style="color:var(--text-muted);">123 Henna Lane, Dehradun — 248001</p>
+        <a href="https://maps.google.com" target="_blank" class="btn-gold" style="font-size:0.9rem; padding:10px 24px;">
+            <i class="bi bi-map"></i> Open in Google Maps
+        </a>
+    </div>
+</section>
+
+@section Scripts {
+<script>
+// Set min date for date picker
+document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+// Occasion selection
+function selectOccasion(btn, value) {
+    document.querySelectorAll('#occasionBtns .gallery-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('occasion').value = value;
+}
+
+// Form validation visual feedback
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    const btn = this.querySelector('[type=submit]');
+    btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+    btn.style.opacity = '0.8';
+});
+</script>
+}

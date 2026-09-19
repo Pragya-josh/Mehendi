@@ -1,0 +1,401 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100 py-5">
+            <div class="col-lg-6 hero-content">
+                <div class="hero-badge">
+                    <i class="bi bi-stars me-2"></i>Award Winning Pawan Mehendi Artist
+                </div>
+                <h1 class="hero-title">
+                    Where Art Meets
+                    <span class="accent">
+                        <span class="accent-script">Tradition</span>
+                    </span>
+                </h1>
+                <p class="hero-description">
+                    Experience the timeless beauty of mehendi art — each intricate design woven with love, skill, and centuries of cultural heritage. Perfect for weddings, festivals & every celebration.
+                </p>
+                <div class="hero-buttons d-flex flex-wrap gap-3">
+                    <a href="/Gallery" class="btn-gold">
+                        <i class="bi bi-images"></i> View Gallery
+                    </a>
+                    <a href="/Contact" class="btn-outline-gold">
+                        <i class="bi bi-calendar-heart"></i> Book Appointment
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number" data-count="1200" data-suffix="+">0+</div>
+                        <div class="label">Brides Adorned</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number" data-count="12" data-suffix="+">0+</div>
+                        <div class="label">Years Experience</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number" data-count="98" data-suffix="%">0%</div>
+                        <div class="label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+                <div class="hero-image-wrap">
+                    <!-- Animated Photo Slider -->
+                    <div class="hero-slider-container">
+                        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3500">
+                            <div class="carousel-inner" style="border-radius: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 4px solid var(--gold-light);">
+                                <div class="carousel-item active">
+                                    <img src="/images/m2.jpg" class="d-block w-100" style="height: 420px; object-fit: cover; border-radius: 36px;" alt="Bridal Pawan Mehendi Art 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/images/m1.jpg" class="d-block w-100" style="height: 420px; object-fit: cover; border-radius: 36px;" alt="Bridal Pawan Mehendi Art 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/images/mehendi.jpg" class="d-block w-100" style="height: 420px; object-fit: cover; border-radius: 36px;" alt="Bridal Pawan Mehendi Art 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/images/feet.jpg" class="d-block w-100" style="height: 420px; object-fit: cover; border-radius: 36px;" alt="Bridal Pawan Mehendi Art 4">
+                                </div>
+                            </div>
+                            <!-- Optional Navigation Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="opacity: 0;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="opacity: 0;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Floating badges -->
+                    <div class="floating-element" style="position:absolute; top:10%; right:-5%;">
+                        <div class="float-badge"><i class="bi bi-gem me-1" style="color:#C9973B;"></i>Bridal Expert</div>
+                    </div>
+                    <div class="floating-element" style="position:absolute; bottom:15%; left:-10%;">
+                        <div class="float-badge"><i class="bi bi-award me-1" style="color:#C9973B;"></i>100% Natural</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div style="position:absolute; bottom:30px; left:50%; transform:translateX(-50%); text-align:center; animation:fadeInUp 1s ease 1.5s both;">
+        <div style="color:rgba(201,151,59,0.7); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Scroll</div>
+        <div style="width:1px; height:40px; background:linear-gradient(to bottom, rgba(201,151,59,0.7), transparent); margin:0 auto; animation:scrollLine 2s ease-in-out infinite;"></div>
+    </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="py-6 why-choose-us-section" style="padding: 6rem 0; background: #EAF7E3; overflow: hidden;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title" data-anim style="color: #333; font-weight: 800; font-size: 2.5rem; text-transform: uppercase;">Why Choose Us?</h2>
+            <p class="section-subtitle mt-3 mx-auto" data-anim data-delay="100" style="color: #555; max-width: 800px; font-size: 1.1rem; line-height: 1.6;">
+                Exceptional artistry, intricate designs, and a touch of tradition – making your special moments unforgettable with the finest Mehandi!
+            </p>
+        </div>
+        
+        <div class="row align-items-center mt-5 position-relative">
+            <!-- Center Graphic (Background Shape + Image) -->
+            <div class="col-lg-4 order-lg-2 text-center position-relative mb-5 mb-lg-0 center-graphic">
+                <img src="/images/circmandela.png" alt="Pawan Mehendi Art" class="img-fluid position-relative" style="z-index: 2; border-radius: 50%; width: 280px; height: 280px; object-fit: cover; margin-top: 50px;">
+            </div>
+
+            <!-- Left Features -->
+            <div class="col-lg-4 order-lg-1 position-relative" style="z-index: 3;">
+                <div class="feature-item d-flex align-items-center justify-content-end text-end mb-4" data-anim="left" data-delay="0">
+                    <div class="feature-text me-3">
+                        <h4 style="color: #333; font-weight: 700; font-size: 1.2rem;">Experienced Artists</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 0;">Expert hands, flawless designs</p>
+                    </div>
+                    <div class="feature-icon" style="background: #8D4B4B; color: white; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px rgba(141,75,75,0.3);">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+                </div>
+                
+                <div class="feature-item d-flex align-items-center justify-content-end text-end mb-4" data-anim="left" data-delay="100">
+                    <div class="feature-text me-3">
+                        <h4 style="color: #333; font-weight: 700; font-size: 1.2rem;">Affordable Packages</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 0;">Stunning Mehandi at pocket-friendly rates</p>
+                    </div>
+                    <div class="feature-icon" style="background: #8D4B4B; color: white; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px rgba(141,75,75,0.3);">
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+                </div>
+
+                <div class="feature-item d-flex align-items-center justify-content-end text-end" data-anim="left" data-delay="200">
+                    <div class="feature-text me-3">
+                        <h4 style="color: #333; font-weight: 700; font-size: 1.2rem;">Customization &amp; Creativity</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 0;">Unique designs tailored for you</p>
+                    </div>
+                    <div class="feature-icon" style="background: #8D4B4B; color: white; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px rgba(141,75,75,0.3);">
+                        <i class="bi bi-gear"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Features -->
+            <div class="col-lg-4 order-lg-3 position-relative" style="z-index: 3;">
+                <div class="feature-item d-flex align-items-center text-start mb-4" data-anim="right" data-delay="0">
+                    <div class="feature-icon me-3" style="background: #8D4B4B; color: white; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px rgba(141,75,75,0.3);">
+                        <i class="bi bi-shield-plus"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4 style="color: #333; font-weight: 700; font-size: 1.2rem;">Hygiene &amp; Safety</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 0;">Sanitized, Secure &amp; Trustworthy</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item d-flex align-items-center text-start mb-4" data-anim="right" data-delay="100">
+                    <div class="feature-icon me-3" style="background: #8D4B4B; color: white; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px rgba(141,75,75,0.3);">
+                        <i class="bi bi-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4 style="color: #333; font-weight: 700; font-size: 1.2rem;">Punctual &amp; Reliable</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 0;">On-time service you can trust</p>
+                    </div>
+                </div>
+
+                <div class="feature-item d-flex align-items-center text-start" data-anim="right" data-delay="200">
+                    <div class="feature-icon me-3" style="background: #8D4B4B; color: white; width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px rgba(141,75,75,0.3);">
+                        <i class="bi bi-stars"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4 style="color: #333; font-weight: 700; font-size: 1.2rem;">Exquisite &amp; Intricate Designs</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 0;">Refined, Elegant &amp; Mesmerizing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== GALLERY PREVIEW ===================== -->
+<section style="padding: 6rem 0; background: #F9F1E8;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge" data-anim="fade">✦ Portfolio ✦</span>
+            <h2 class="section-title" data-anim>Our Finest Creations</h2>
+            <p class="section-subtitle" data-anim data-delay="100">A glimpse into our world of intricate henna artistry</p>
+            <div class="ornament-divider" data-anim data-delay="150"><span>✿</span></div>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-4 col-6" data-anim data-delay="0">
+                <div class="gallery-item" onclick="openLightbox('/images/bridal_arm.jpg','Bridal Full Arm Mehendi')">
+                    <img src="/images/bridal_arm.jpg" alt="Bridal Full Arm Mehendi" loading="lazy"/>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h5>Bridal Full Arm</h5>
+                            <p>Traditional Indian Bridal</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay-icon"><i class="bi bi-zoom-in"></i></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6" data-anim data-delay="100">
+                <div class="gallery-item" onclick="openLightbox('/images/arabic.jpg','Arabic Mehendi Design')">
+                    <img src="/images/arabic.jpg" alt="Arabic Mehendi Design" loading="lazy"/>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h5>Arabic Floral</h5>
+                            <p>Elegant Arabic Style</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay-icon"><i class="bi bi-zoom-in"></i></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6" data-anim data-delay="200">
+                <div class="gallery-item" onclick="openLightbox('/images/mandala.jpg','Mandala Mehendi')">
+                    <img src="/images/mandala.jpg" alt="Mandala Mehendi" loading="lazy"/>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h5>Mandala Art</h5>
+                            <p>Geometric Mandala Pattern</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay-icon"><i class="bi bi-zoom-in"></i></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6" data-anim data-delay="100">
+                <div class="gallery-item" onclick="openLightbox('/images/feet.jpg','Feet Mehendi Design')">
+                    <img src="/images/feet.jpg" alt="Feet Mehendi Design" loading="lazy"/>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h5>Bridal Feet</h5>
+                            <p>Indo-Western Fusion</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay-icon"><i class="bi bi-zoom-in"></i></div>
+                </div>
+            </div>
+            <div class="col-md-8" data-anim data-delay="200" style="max-height:none;">
+                <div class="gallery-item" style="aspect-ratio:16/9;" onclick="openLightbox('/images/ceremony.jpg','Mehendi Ceremony Setup')">
+                    <img src="/images/ceremony.jpg" alt="Mehendi Ceremony Setup" loading="lazy" style="aspect-ratio:16/9;"/>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h5>Mehendi Ceremony</h5>
+                            <p>Full Event Decoration & Setup</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay-icon"><i class="bi bi-zoom-in"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5" data-anim>
+            <a href="/Gallery" class="btn-gold">
+                <i class="bi bi-grid-3x3-gap"></i> View Full Gallery
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FEATURED SERVICE ===================== -->
+<section style="padding: 6rem 0; background: var(--cream);">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-anim="left">
+                <div class="about-image-wrap">
+                    <img src="/images/artist.png" alt="Our Pawan Mehendi Artist at Work" class="img-fluid" style="border-radius:30px;"/>
+                    <div class="about-badge-card">
+                        <span class="number" data-count="1200" data-suffix="+">1200+</span>
+                        <div class="label">Designs Created</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-anim="right">
+                <span class="section-badge">✦ Our Story ✦</span>
+                <h2 class="section-title">Crafting Beauty with Every Stroke</h2>
+                <div class="ornament-divider text-start" style="text-align:left!important;">
+                    <div style="height:2px; background:linear-gradient(to right, var(--gold), transparent); margin-bottom:1.5rem; width:80px;"></div>
+                </div>
+                <p style="color:var(--text-muted); line-height:1.9; margin-bottom:1.5rem;">
+                    With over 12 years of dedicated artistry, we've had the privilege of adorning thousands of brides, celebrating festivals, and creating memories that last a lifetime. Our passion for mehendi transcends mere art — it's a spiritual practice rooted in ancient tradition.
+                </p>
+                <p style="color:var(--text-muted); line-height:1.9; margin-bottom:2rem;">
+                    From the intricate details of a bridal design to the flowing patterns of Arabic style, each piece we create is a unique masterpiece tailored exclusively for you.
+                </p>
+                <div class="row g-3 mb-3">
+                    <div class="col-6">
+                        <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; background:var(--white); border-radius:12px; border:1px solid rgba(201,151,59,0.15); box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--gold); font-size:1.2rem;"></i>
+                            <span style="font-size:0.9rem; font-weight:500; color:var(--text-dark);">Bridal Packages</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; background:var(--white); border-radius:12px; border:1px solid rgba(201,151,59,0.15); box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--gold); font-size:1.2rem;"></i>
+                            <span style="font-size:0.9rem; font-weight:500; color:var(--text-dark);">Home Service</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; background:var(--white); border-radius:12px; border:1px solid rgba(201,151,59,0.15); box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--gold); font-size:1.2rem;"></i>
+                            <span style="font-size:0.9rem; font-weight:500; color:var(--text-dark);">Event Bookings</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; background:var(--white); border-radius:12px; border:1px solid rgba(201,151,59,0.15); box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--gold); font-size:1.2rem;"></i>
+                            <span style="font-size:0.9rem; font-weight:500; color:var(--text-dark);">100% Natural</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="/About" class="btn-gold">
+                    <i class="bi bi-arrow-right"></i> Learn More About Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section style="padding: 6rem 0; background: #F9F1E8;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge" data-anim="fade">✦ Testimonials ✦</span>
+            <h2 class="section-title" data-anim>Words from Our Brides</h2>
+            <p class="section-subtitle" data-anim data-delay="100">Real experiences from real customers</p>
+            <div class="ornament-divider" data-anim data-delay="150"><span>✿</span></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-anim data-delay="0">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"Absolutely breathtaking work! My bridal mehendi was the most beautiful I've ever seen. Every single guest complimented it throughout the wedding. Truly an artist!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar-placeholder">P</div>
+                        <div>
+                            <p class="testimonial-name">Pawan</p>
+                            <p class="testimonial-role">Bride, Dehrdaun Wedding 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-anim data-delay="100">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"I was amazed at how quickly and precisely the patterns were applied. The stain was incredibly dark and lasted for weeks! Will definitely book again for my sister's wedding."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar-placeholder">R</div>
+                        <div>
+                            <p class="testimonial-name">Rashida Khan</p>
+                            <p class="testimonial-role">Client, Eid Celebration 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-anim data-delay="200">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"Professional, creative, and so passionate about their work. The arabic design I chose came out even better than I imagined. The home service option was so convenient!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar-placeholder">A</div>
+                        <div>
+                            <p class="testimonial-name">Ananya Reddy</p>
+                            <p class="testimonial-role">Client, Diwali 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CTA SECTION ===================== -->
+<section class="cta-section" style="padding: 5rem 0;">
+    <div class="container text-center position-relative">
+        <h2 class="section-title" style="color:var(--burgundy-dark); font-size:2.8rem;" data-anim>
+            Ready to Get Beautiful Mehendi?
+        </h2>
+        <p style="color:var(--burgundy); font-size:1.1rem; max-width:550px; margin:1rem auto 2.5rem;" data-anim data-delay="100">
+            Book your appointment today and let us create a masterpiece that makes your special day unforgettable.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap" data-anim data-delay="200">
+            <a href="/Contact" style="background:var(--burgundy-dark); color:white; font-weight:700; padding:14px 36px; border-radius:50px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:0 8px 30px rgba(74,18,40,0.35); transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(74,18,40,0.45)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 30px rgba(74,18,40,0.35)';">
+                <i class="bi bi-calendar-heart"></i> Book Now
+            </a>
+            <a href="/Services" style="background:transparent; color:var(--burgundy-dark); font-weight:600; padding:13px 36px; border-radius:50px; text-decoration:none; border:2px solid var(--burgundy); display:inline-flex; align-items:center; gap:8px; transition:all 0.3s ease;" onmouseover="this.style.background='rgba(107,30,58,0.08)';" onmouseout="this.style.background='transparent';">
+                <i class="bi bi-stars"></i> View Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+@@keyframes scrollLine {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.3; transform: scaleY(0.6); }
+}
+</style>
